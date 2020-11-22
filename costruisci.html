@@ -1,0 +1,720 @@
+<html>
+<head>
+  <style> 
+  body { margin: 0; } 
+
+</style>
+<script src="three.js"></script>
+  <script src="3d-force-graph.min.js"></script>
+</head>
+
+<body>
+  <div id="3d-graph"></div>
+
+  <script>
+    // Random tree
+
+
+    const N = 1000;
+    const GROUPS = 5; // Numero colori
+
+
+    const gData = {
+      // nodes: nodi.map((nodo,id) => ({id, nodo})),
+      nodes: [
+  {
+    "id": "id1",
+    "name": "name_1",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 10
+  },
+  {
+    "id": "id2",
+    "name": "name_2",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id3",
+    "name": "name_3",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id4",
+    "name": "name_4",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id5",
+    "name": "name_5",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id6",
+    "name": "name_6",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id7",
+    "name": "name_7",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id8",
+    "name": "name_8",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id9",
+    "name": "name_9",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id10",
+    "name": "name_10",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id11",
+    "name": "name_11",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id12",
+    "name": "name_12",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id13",
+    "name": "name_13",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id14",
+    "name": "name_14",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id15",
+    "name": "name_15",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id16",
+    "name": "name_16",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id17",
+    "name": "name_17",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id18",
+    "name": "name_18",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id19",
+    "name": "name_19",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id20",
+    "name": "name_20",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id21",
+    "name": "name_21",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id22",
+    "name": "name_22",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id23",
+    "name": "name_23",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id24",
+    "name": "name_24",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id25",
+    "name": "name_25",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id26",
+    "name": "name_26",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id27",
+    "name": "name_27",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id28",
+    "name": "name_28",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id29",
+    "name": "name_29",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id30",
+    "name": "name_30",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id31",
+    "name": "name_31",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id32",
+    "name": "name_32",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id33",
+    "name": "name_33",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id34",
+    "name": "name_34",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id35",
+    "name": "name_35",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id36",
+    "name": "name_36",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id37",
+    "name": "name_37",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id38",
+    "name": "name_38",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id39",
+    "name": "name_39",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id40",
+    "name": "name_40",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id41",
+    "name": "name_41",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id42",
+    "name": "name_42",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id43",
+    "name": "name_43",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id44",
+    "name": "name_44",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id45",
+    "name": "name_45",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id46",
+    "name": "name_46",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id47",
+    "name": "name_47",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id48",
+    "name": "name_48",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id49",
+    "name": "name_49",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id50",
+    "name": "name_50",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id51",
+    "name": "name_51",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id52",
+    "name": "name_52",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id53",
+    "name": "name_53",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id54",
+    "name": "name_54",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id55",
+    "name": "name_55",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id56",
+    "name": "name_56",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id57",
+    "name": "name_57",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id58",
+    "name": "name_58",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id59",
+    "name": "name_59",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id60",
+    "name": "name_60",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id61",
+    "name": "name_61",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id62",
+    "name": "name_62",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id63",
+    "name": "name_63",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id64",
+    "name": "name_64",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id65",
+    "name": "name_65",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id66",
+    "name": "name_66",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id67",
+    "name": "name_67",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id68",
+    "name": "name_68",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id69",
+    "name": "name_69",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id70",
+    "name": "name_70",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id71",
+    "name": "name_71",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id72",
+    "name": "name_72",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id73",
+    "name": "name_73",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id74",
+    "name": "name_74",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id75",
+    "name": "name_75",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id76",
+    "name": "name_76",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id77",
+    "name": "name_77",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  },
+  {
+    "id": "id78",
+    "name": "name_78",
+    "colore": "#54aedb",
+    "img": "cat.jpg",
+    "url": "#",
+    "val": 1
+  }
+],
+links: [
+        {
+            "source": "id1",
+            "target": "id2"
+        },
+                {
+            "source": "id1",
+            "target": "id3"
+        },
+                        {
+            "source": "id2",
+            "target": "id3"
+        },
+    ]
+}
+
+
+    const Graph = ForceGraph3D()
+      (document.getElementById('3d-graph'))
+
+.nodeThreeObject(({ img }) => {
+        // use a sphere as a drag handle
+        const obj = new THREE.Mesh(
+          new THREE.SphereGeometry(7),
+          new THREE.MeshBasicMaterial({ depthWrite: false, transparent: true, opacity: 0.5 })
+        );
+
+        // add img sprite as child
+        const imgTexture = new THREE.TextureLoader().load(`./img/${img}`);
+        // imgTexture.setCrossOrigin('anonymous');
+
+
+        const material = new THREE.SpriteMaterial({ map: imgTexture });
+        const sprite = new THREE.Sprite(material);
+        sprite.scale.set(20, 20);
+        obj.add(sprite);
+
+        return obj;
+      })
+
+
+
+// .width('800')
+// .height('800')
+.backgroundColor('#000066')
+.showNavInfo('false')
+
+        .nodeAutoColorBy('group')
+        // .nodeRelSize('val')
+        .nodeColor('colore')
+        .nodeResolution(30)
+        .nodeOpacity(0.5)
+        // .linkAutoColorBy(d => gData.nodes[d.source].group)
+        .linkOpacity(0.5)
+        .nodeLabel('name')
+   .onNodeClick(node => {funzione(node.url)})
+.linkDirectionalParticles(10)
+.linkDirectionalParticleWidth(1)
+
+
+.graphData(gData);
+function funzione(id_nodo)
+{
+window.open(id_nodo, 'target=-blank');
+;
+}
+
+
+  </script>
+</body>
+</html>
